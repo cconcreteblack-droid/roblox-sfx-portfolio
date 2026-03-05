@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>godsosoon.com | VFX Technical Director</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        
+        :root { 
+            --bg: #050505; 
+            --fg: #ffffff; 
+            --accent: rgba(255,255,255,0.1);
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: var(--bg); 
+            color: var(--fg); 
+            min-height: 300vh; 
+            overflow-x: hidden; 
+            transition: background 1s cubic-bezier(0.4, 0, 0.2, 1), color 1s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+
+        .light-theme { 
+            --bg: #fafafa; 
+            --fg: #0a0a0a; 
+            --accent: rgba(0,0,0,0.05);
+        }
+
+        .section { 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            padding: 0 10%; 
+            position: relative; 
+        }
+
+        .sound-shape { 
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+            cursor: pointer; 
+            border: 1px solid var(--accent); 
+            background: var(--accent); 
+            border-radius: 4px; 
+        }
+
+        .sound-shape:hover { 
+            transform: scale(1.02); 
+            border-color: currentColor; 
+            background: transparent;
+        }
+
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+            gap: 1.5rem; 
+            margin-top: 3rem; 
+        }
+
+        .label { 
+            font-size: 0.65rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.2em; 
+            margin-top: 1rem; 
+            opacity: 0.5; 
+            text-align: center; 
+            font-weight: 800; 
+        }
+
+        .vis { 
+            width: 100%; 
+            height: 2px; 
+            background: var(--accent); 
+            margin-top: 6px; 
+            position: relative; 
+            overflow: hidden; 
+        }
+
+        .bar { 
+            position: absolute; 
+            height: 100%; 
+            width: 0; 
+            background: currentColor; 
+        }
+
+        .text-reveal { 
+            opacity: 0; 
+            transform: translateY(20px); 
+            transition: 0.8s ease-out; 
+        }
+
+        .text-reveal.visible { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: currentColor; opacity: 0.2; }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="section">
+        <!-- Smaller typography: from 7xl/9xl to 4xl/6xl -->
+        <h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-8 text-reveal" id="title">GODSOSOON</h1>
+        <div class="max-w-4xl text-reveal">
+            <p class="text-2xl md:text-4xl font-light mb-12 leading-tight">
+                VFX Technical Director & <span class="font-bold border-b-2 border-current">Lead Simulation Artist</span>
+            </p>
+            <div class="grid md:grid-cols-2 gap-16 border-t border-current/10 pt-12">
+                <p class="text-lg opacity-70 leading-relaxed">
+                    With over <span class="font-medium">three years of professional tenure</span> in high-end VFX boutiques, I specialize in the architectural design of procedural systems. My work bridges the gap between physical reality and digital abstraction.
+                </p>
+                <p class="text-lg opacity-70 leading-relaxed">
+                    Expertise encompasses <span class="font-medium">Houdini Solaris</span>, large-scale dynamic solvers (FLIP/Pyro/RBD), and deep-layer <span class="font-medium">Nuke</span> integration for feature-film production.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUDIO FORGE SECTION -->
+    <section class="section">
+        <div class="mb-12 text-reveal">
+            <h2 class="text-xs uppercase tracking-[0.6em] mb-4 opacity-40">System Assets</h2>
+            <p class="text-4xl font-light italic tracking-tight">Technical Sound Library</p>
+            <p class="max-w-2xl mt-4 opacity-50 text-sm">Real-time modular synthesis demonstrations utilizing WebAudio API for interactive media environments.</p>
+        </div>
+        <div class="gallery-grid" id="gallery"></div>
+    </section>
+
+    <!-- CORE SPECIALIZATIONS -->
+    <section class="section">
+        <div class="max-w-5xl">
+            <h2 class="text-xs uppercase tracking-[0.8em] mb-16 opacity-40 text-reveal">Core Specializations</h2>
+            <div class="grid md:grid-cols-2 gap-20">
+                <div class="text-reveal">
+                    <h3 class="text-4xl font-black mb-6 italic tracking-tighter uppercase">Procedural FX</h3>
+                    <p class="text-xl opacity-60 leading-relaxed mb-6">Developing bespoke <span class="font-bold">HDA toolsets</span> that empower artists to create infinite variations of complex natural phenomena.</p>
+                    <ul class="space-y-2 opacity-40 text-sm uppercase tracking-widest">
+                        <li>— Custom VEX/Python Solvers</li>
+                        <li>— Large Scale Water Systems</li>
+                        <li>— Gaseous Fluid Dynamics</li>
+                    </ul>
+                </div>
+                <div class="text-reveal">
+                    <h3 class="text-4xl font-black mb-6 italic tracking-tighter uppercase">Digital Compositing</h3>
+                    <p class="text-xl opacity-60 leading-relaxed mb-6">High-fidelity integration of CG elements into live-action plates using <span class="font-bold">Deep Compositing</span> workflows.</p>
+                    <ul class="space-y-2 opacity-40 text-sm uppercase tracking-widest">
+                        <li>— Multi-Pass AOV Reconstruction</li>
+                        <li>— Photoreal Integration</li>
+                        <li>— Color Managed Pipelines (ACES)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="p-20 text-center opacity-20 text-[10px] tracking-[1em] uppercase">
+        godsosoon.com — immersive technical direction — 2025
+    </footer>
+
+    <script>
+        // --- AUDIO ENGINE ---
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const gallery = document.getElementById('gallery');
+
+        const createNoiseBuffer = (duration) => {
+            const b = audioCtx.createBuffer(1, audioCtx.sampleRate * duration, audioCtx.sampleRate);
+            const d = b.getChannelData(0);
+            for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+            return b;
+        };
+
+        const sounds = [
+            { name: "Sword Swing", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+                o.type = 'sawtooth'; o.frequency.setValueAtTime(800, n); o.frequency.exponentialRampToValueAtTime(100, n + 0.15);
+                const f = ctx.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = 1500;
+                g.gain.setValueAtTime(0.1, n); g.gain.exponentialRampToValueAtTime(0.01, n + 0.15);
+                o.connect(f); f.connect(g); g.connect(ctx.destination);
+                o.start(); o.stop(n + 0.15); return 0.15;
+            }},
+            { name: "Heavy Impact", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+                o.frequency.setValueAtTime(150, n); o.frequency.exponentialRampToValueAtTime(20, n + 0.3);
+                g.gain.setValueAtTime(0.6, n); g.gain.exponentialRampToValueAtTime(0.001, n + 0.4);
+                o.connect(g); g.connect(ctx.destination); o.start(); o.stop(n + 0.4); return 0.4;
+            }},
+            { name: "Power Charge", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+                o.type = 'sine'; o.frequency.setValueAtTime(50, n); o.frequency.linearRampToValueAtTime(1200, n + 1.5);
+                g.gain.setValueAtTime(0, n); g.gain.linearRampToValueAtTime(0.2, n + 1.2); g.gain.exponentialRampToValueAtTime(0.001, n + 1.5);
+                o.connect(g); g.connect(ctx.destination); o.start(); o.stop(n + 1.5); return 1.5;
+            }},
+            { name: "Energy Blast", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain(), m = ctx.createOscillator(), mg = ctx.createGain();
+                m.frequency.value = 100; mg.gain.value = 500; m.connect(mg); mg.connect(o.frequency);
+                o.frequency.value = 1000; g.gain.setValueAtTime(0.2, n); g.gain.exponentialRampToValueAtTime(0.001, n + 0.5);
+                o.connect(g); g.connect(ctx.destination); o.start(); m.start(); o.stop(n + 0.5); return 0.5;
+            }},
+            { name: "Teleport Whoosh", run: (ctx) => {
+                const n = ctx.currentTime, s = ctx.createBufferSource();
+                s.buffer = createNoiseBuffer(0.4);
+                const f = ctx.createBiquadFilter(); f.type = 'bandpass'; f.frequency.setValueAtTime(100, n); f.frequency.exponentialRampToValueAtTime(8000, n + 0.4);
+                const g = ctx.createGain(); g.gain.setValueAtTime(0.2, n); g.gain.exponentialRampToValueAtTime(0.001, n + 0.4);
+                s.connect(f); f.connect(g); g.connect(ctx.destination); s.start(); return 0.4;
+            }},
+            { name: "Shockwave Slam", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+                o.frequency.setValueAtTime(60, n); g.gain.setValueAtTime(0.5, n); g.gain.exponentialRampToValueAtTime(0.001, n + 0.8);
+                const noise = ctx.createBufferSource(); noise.buffer = createNoiseBuffer(0.8);
+                const ng = ctx.createGain(); ng.gain.value = 0.2; noise.connect(ng); ng.connect(g);
+                o.connect(g); g.connect(ctx.destination); o.start(); noise.start(); o.stop(n + 0.8); return 0.8;
+            }},
+            { name: "Parry Block", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+                o.type = 'triangle'; o.frequency.value = 1200;
+                g.gain.setValueAtTime(0.3, n); g.gain.exponentialRampToValueAtTime(0.001, n + 0.1);
+                o.connect(g); g.connect(ctx.destination); o.start(); o.stop(n + 0.1); return 0.1;
+            }},
+            { name: "Light Attack", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+                o.type = 'sine'; o.frequency.setValueAtTime(600, n); o.frequency.exponentialRampToValueAtTime(300, n + 0.1);
+                g.gain.setValueAtTime(0.1, n); g.gain.exponentialRampToValueAtTime(0.01, n + 0.1);
+                o.connect(g); g.connect(ctx.destination); o.start(); o.stop(n + 0.1); return 0.1;
+            }},
+            { name: "Heavy Attack", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+                o.type = 'triangle'; o.frequency.setValueAtTime(200, n); o.frequency.exponentialRampToValueAtTime(50, n + 0.4);
+                g.gain.setValueAtTime(0.3, n); g.gain.exponentialRampToValueAtTime(0.001, n + 0.4);
+                o.connect(g); g.connect(ctx.destination); o.start(); o.stop(n + 0.4); return 0.4;
+            }},
+            { name: "Ultimate", run: (ctx) => {
+                const n = ctx.currentTime;
+                [200, 300, 400, 500].forEach((f, i) => {
+                    const o = ctx.createOscillator(); const g = ctx.createGain();
+                    o.frequency.value = f; g.gain.setValueAtTime(0.1, n + (i * 0.1)); g.gain.exponentialRampToValueAtTime(0.001, n + 1);
+                    o.connect(g); g.connect(ctx.destination); o.start(n + (i * 0.1)); o.stop(n + 1.2);
+                });
+                return 1.2;
+            }},
+            { name: "Metal Step", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+                o.type = 'sine'; o.frequency.value = 1500; g.gain.setValueAtTime(0.05, n); g.gain.exponentialRampToValueAtTime(0.001, n + 0.05);
+                o.connect(g); g.connect(ctx.destination); o.start(); o.stop(n + 0.05); return 0.05;
+            }},
+            { name: "Wood Step", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+                o.frequency.value = 120; g.gain.setValueAtTime(0.1, n); g.gain.exponentialRampToValueAtTime(0.001, n + 0.1);
+                o.connect(g); g.connect(ctx.destination); o.start(); o.stop(n + 0.1); return 0.1;
+            }},
+            { name: "Gravel Step", run: (ctx) => {
+                const s = ctx.createBufferSource(); s.buffer = createNoiseBuffer(0.08);
+                const g = ctx.createGain(); g.gain.value = 0.05; s.connect(g); g.connect(ctx.destination);
+                s.start(); return 0.08;
+            }},
+            { name: "Door Creak", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+                o.type = 'sawtooth'; o.frequency.setValueAtTime(100, n);
+                for(let i=0; i<10; i++) o.frequency.linearRampToValueAtTime(100 + Math.random()*20, n + (i*0.1));
+                g.gain.setValueAtTime(0.02, n); g.gain.linearRampToValueAtTime(0, n + 1);
+                o.connect(g); g.connect(ctx.destination); o.start(); o.stop(n + 1); return 1;
+            }},
+            { name: "Monster Growl", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+                o.type = 'sawtooth'; o.frequency.value = 60;
+                const lfo = ctx.createOscillator(); lfo.frequency.value = 15; const lfoG = ctx.createGain(); lfoG.gain.value = 20;
+                lfo.connect(lfoG); lfoG.connect(o.frequency);
+                g.gain.setValueAtTime(0.1, n); g.gain.linearRampToValueAtTime(0, n + 1.5);
+                o.connect(g); g.connect(ctx.destination); o.start(); lfo.start(); o.stop(n + 1.5); return 1.5;
+            }},
+            { name: "Level Up", run: (ctx) => {
+                const n = ctx.currentTime; [523, 659, 783, 1046].forEach((f, i) => {
+                    const o = ctx.createOscillator(); const g = ctx.createGain();
+                    o.frequency.value = f; g.gain.setValueAtTime(0, n + (i*0.1)); g.gain.linearRampToValueAtTime(0.1, n + (i*0.1) + 0.05); g.gain.exponentialRampToValueAtTime(0.001, n + 1);
+                    o.connect(g); g.connect(ctx.destination); o.start(n + (i*0.1)); o.stop(n + 1);
+                }); return 1;
+            }},
+            { name: "Radio Static", run: (ctx) => {
+                const s = ctx.createBufferSource(); s.buffer = createNoiseBuffer(1);
+                const g = ctx.createGain(); g.gain.setValueAtTime(0.03, ctx.currentTime); g.gain.linearRampToValueAtTime(0, ctx.currentTime + 1);
+                s.connect(g); g.connect(ctx.destination); s.start(); return 1;
+            }},
+            { name: "UI Click", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+                o.frequency.value = 1000; g.gain.setValueAtTime(0.1, n); g.gain.exponentialRampToValueAtTime(0.001, n + 0.05);
+                o.connect(g); g.connect(ctx.destination); o.start(); o.stop(n + 0.05); return 0.05;
+            }},
+            { name: "Coin Pickup", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+                o.frequency.setValueAtTime(950, n); o.frequency.setValueAtTime(1300, n + 0.08);
+                g.gain.setValueAtTime(0.1, n); g.gain.exponentialRampToValueAtTime(0.001, n + 0.3);
+                o.connect(g); g.connect(ctx.destination); o.start(); o.stop(n + 0.3); return 0.3;
+            }},
+            { name: "Error Buzz", run: (ctx) => {
+                const n = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+                o.type = 'sawtooth'; o.frequency.value = 100; g.gain.setValueAtTime(0.1, n); g.gain.linearRampToValueAtTime(0, n + 0.3);
+                o.connect(g); g.connect(ctx.destination); o.start(); o.stop(n + 0.3); return 0.3;
+            }},
+            { name: "Whisper Ambience", run: (ctx) => {
+                const s = ctx.createBufferSource(); s.buffer = createNoiseBuffer(2);
+                const f = ctx.createBiquadFilter(); f.type = 'bandpass'; f.frequency.value = 2500; f.Q.value = 10;
+                const g = ctx.createGain(); g.gain.setValueAtTime(0, ctx.currentTime); g.gain.linearRampToValueAtTime(0.02, ctx.currentTime + 0.5); g.gain.linearRampToValueAtTime(0, ctx.currentTime + 2);
+                s.connect(f); f.connect(g); g.connect(ctx.destination); s.start(); return 2;
+            }}
+        ];
+
+        // --- RENDER SOUNDS ---
+        sounds.forEach((s) => {
+            const wrap = document.createElement('div'); 
+            wrap.className = 'flex flex-col';
+            
+            const shape = document.createElement('div'); 
+            shape.className = 'sound-shape aspect-square flex items-center justify-center p-4';
+            shape.innerHTML = `<svg viewBox="0 0 100 100" class="w-8 h-8" fill="none" stroke="currentColor"><circle cx="50" cy="50" r="15" stroke-dasharray="4 2"/><path d="M50 20 L50 30 M50 70 L50 80 M20 50 L30 50 M70 50 L80 50" opacity="0.4"/></svg>`;
+            
+            const label = document.createElement('div'); 
+            label.className = 'label'; 
+            label.innerText = s.name;
+            
+            const vis = document.createElement('div'); 
+            vis.className = 'vis'; 
+            vis.innerHTML = `<div class="bar"></div>`;
+            
+            wrap.appendChild(shape); 
+            wrap.appendChild(label); 
+            wrap.appendChild(vis);
+            gallery.appendChild(wrap);
+            
+            const bar = vis.querySelector('.bar');
+            
+            shape.onclick = async () => {
+                if (audioCtx.state === 'suspended') await audioCtx.resume();
+                const dur = s.run(audioCtx);
+                
+                // Animation logic
+                bar.style.transition = 'none'; 
+                bar.style.width = '0%'; 
+                void bar.offsetWidth; // Force reflow
+                bar.style.transition = `width ${dur}s linear`; 
+                bar.style.width = '100%';
+                
+                setTimeout(() => { 
+                    bar.style.width = '0%'; 
+                }, dur * 1000);
+            };
+        });
+
+        // --- INTERACTION ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { 
+                if (e.isIntersecting) e.target.classList.add('visible'); 
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.text-reveal').forEach(el => observer.observe(el));
+
+        window.onscroll = () => {
+            const scrolled = window.scrollY > 400;
+            document.body.classList.toggle('light-theme', scrolled);
+        };
+    </script>
+</body>
+</html>
